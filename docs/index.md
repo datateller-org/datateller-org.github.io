@@ -6,6 +6,8 @@ utilizes cutting-edge machine learning and artificial intelligence techniques to
 decipher vast datasets, revealing predictions about future trends and events
 with remarkable accuracy.
 
+![Data Teller](/images/header.png)
+
 **Vision**: To become the pioneering force in the field of predictive analytics,
 revolutionizing how we understand and prepare for future possibilities.
 
