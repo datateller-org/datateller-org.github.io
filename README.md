@@ -3,7 +3,7 @@
 Data Teller aims to predict the future from data
 
 - Software License: BSD 3 Clause
-- Documentation: https://datateller.github.io
+- Documentation: https://datateller-org.github.io
 
 ## Features
 

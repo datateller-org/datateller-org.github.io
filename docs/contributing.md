@@ -1,22 +1,5 @@
 # Contributing
 
-In order to be able to contribute, it is important that you understand the
-project layout.
-
-This project uses the _src layout_, which means that the package code is located
-at `./src/datateller`.
-
-For my information, check the official documentation:
-https://packaging.python.org/en/latest/discussions/src-layout-vs-flat-layout/
-
-In addition, you should know that to build our package we use
-[Poetry](https://python-poetry.org/), it's a Python package management tool that
-simplifies the process of building and publishing Python packages. It allows us
-to easily manage dependencies, virtual environments and package versions. Poetry
-also includes features such as dependency resolution, lock files and publishing
-to PyPI. Overall, Poetry streamlines the process of managing Python packages,
-making it easier for us to create and share our code with others.
-
 Contributions are welcome, and they are greatly appreciated! Every little bit
 helps, and credit will always be given.
 
@@ -46,13 +29,14 @@ and “help wanted” is open to whoever wants to implement it.
 
 ### Write Documentation
 
-Data Teller could always use more documentation, whether as part of the
-official Data Teller docs, in docstrings, or even on the web in blog
-posts, articles, and such.
+Data Teller could always use more documentation, whether as part of the official
+Data Teller docs, in docstrings, or even on the web in blog posts, articles, and
+such.
 
 ### Submit Feedback
 
-The best way to send feedback is to file an issue at https://github.com/datateller-org.github.io/issues.
+The best way to send feedback is to file an issue at
+https://github.com/datateller-org.github.io/issues.
 
 If you are proposing a feature:
 
@@ -63,101 +47,82 @@ If you are proposing a feature:
 
 ## Get Started!
 
-Ready to contribute? Here’s how to set up `datateller.github.io` for local
+Ready to contribute? Here’s how to set up `datateller-org.github.io` for local
 development.
 
-1.  Fork the `datateller.github.io` repo on GitHub.
-
+1.  Fork the `datateller-org.github.io` repo on GitHub.
 2.  Clone your fork locally:
 
-    ```
-    git clone git@github.com:your_name_here/datateller.github.io.git
-    ```
+```bash
+$ git clone git@github.com:your_name_here/datateller-org.github.io.git
+```
 
-3.  Install your local copy into a virtualenv. This is how you set up your fork
-    for local development:
+3.  Create an environment with `conda` and install the dependencies:
 
-    ```
-    cd datateller.github.io/
-    python -m venv env
-    ```
+```bash
+$ cd datateller-org.github.io/
+$ mamba env create --file conda/dev.yaml
+$ conda activate datateller-web
+```
 
-    Using poetry:
+Install the dependencies:
 
-    ```
-    poetry install --with dev
-    ```
-
-    To get poetry, just pip install it into your virtualenv.
-
-    Alternatively, using pip:
-
-    ```
-    pip install -e .
-    ```
+```bash
+$ poetry install --no-root
+```
 
 4.  Create a branch for local development:
 
-    ```
-    git checkout -b name-of-your-bugfix-or-feature
-    ```
+```bash
+git checkout -b name-of-your-bugfix-or-feature
+```
 
-    Now you can make your changes locally.
+Now you can make your changes locally. 5. `datateller-org.github.io` uses a set
+of `pre-commit` hooks and the `pre-commit` bot to format, type-check, and
+prettify the codebase. The hooks can be installed locally using:
 
-5.  `datateller.github.io` uses a set of `pre-commit` hooks and the `pre-commit`
-    bot to format, type-check, and prettify the codebase. The hooks can be
-    installed locally using -
+```bash
+pre-commit install
+```
 
-    ```
-    pre-commit install
-    ```
+This would run the checks every time a commit is created locally. The checks
+will only run on the files modified by that commit, but the checks can be
+triggered for all the files using:
 
-    This would run the checks every time a commit is created locally. The checks
-    will only run on the files modified by that commit, but the checks can be
-    triggered for all the files using -
+```bash
+$ pre-commit run --all-files
+```
 
-    ```
-    pre-commit run --all-files
-    ```
+If you would like to skip the failing checks and push the code for further
+discussion, use the `--no-verify` option with `git commit`. 6.
+`datateller-org.github.io` is tested with `pytest`. `pytest` is responsible for
+testing the code, whose configuration is available in pyproject.toml. 7. Commit
+your changes and push your branch to GitHub::
 
-    If you would like to skip the failing checks and push the code for further
-    discussion, use the `--no-verify` option with `git commit`.
-
-6.  `datateller.github.io` is tested with `pytest`. `pytest` is responsible for
-    testing the code, whose configuration is available in pyproject.toml.
-    Additionally, `datateller.github.io` also uses `pytest-cov` to calculate the
-    coverage of these unit tests.
-
-    #### Running tests locally
-
-    The tests can be executed using the `test` dependencies of
-    `datateller.github.io` in the following way -
-
-    ```
-    python -m pytest
-    ```
-
-    #### Running tests with coverage locally
-
-    The coverage value can be obtained while running the tests using
-    `pytest-cov` in the following way -
-
-    ```
-    python -m pytest --cov=datateller.github.io tests/
-    ```
-
-    A much more detailed guide on testing with `pytest` is available
-    [here](https://docs.pytest.org/en/8.0.x/how-to/index.html).
-
-7.  Commit your changes and push your branch to GitHub::
-
-    ```
-    git add .
-    git commit -m “Your detailed description of your changes.”
-    git push origin name-of-your-bugfix-or-feature
-    ```
+```bash
+$ git add .
+$ git commit -m “Your detailed description of your changes.”
+$ git push origin name-of-your-bugfix-or-feature
+```
 
 8.  Submit a pull request through the GitHub website.
+
+## Run jupyter-lab
+
+All the data exploration and analysis is done using jupyter notebooks. In order
+to run it, use the following command:
+
+```bash
+$ jupyter-lab --notebook-dir docs/notebooks
+```
+
+## Launch the web page locally
+
+In order to lauch the web page locally with all the notebooks, run:
+
+```bash
+$ makim web.preview
+```
 
 ## Pull Request Guidelines
 
@@ -167,15 +132,7 @@ Before you submit a pull request, check that it meets these guidelines:
 2.  If the pull request adds functionality, the docs should be updated. Put your
     new functionality into a function with a docstring, and add the feature to
     the list in README.rst.
-3.  The pull request should work for Python >= 3.8.
-
-## Tips
-
-To run a subset of tests:
-
-```
-pytest tests.test_datateller
-```
+3.  The pull request should work for Python 3.11.
 
 ## Release
 
@@ -211,7 +168,7 @@ The table below shows which commit message gets you which release type when
 | `fix(pencil): stop graphite breaking when pressure is applied` | Fix Release      |
 | `feat(pencil): add 'graphiteWidth' option`                     | Feature Release  |
 | `perf(pencil): remove graphiteWidth option`                    | Chore            |
-| `BREAKING CHANGE: The graphiteWidth option has been removed`   | Breaking Release |
+| `fix(pencil)!: The graphiteWidth option has been removed`      | Breaking Release |
 
 source:
 <https://github.com/semantic-release/semantic-release/blob/master/README.md#commit-message-format>

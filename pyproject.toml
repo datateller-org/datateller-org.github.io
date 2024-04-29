@@ -1,12 +1,9 @@
 [tool.poetry]
-name = "datateller.github.io"
+name = "datateller-nb"
 version = "0.1.0" #semantic-release
 description = "Data Teller aims to predict the future from data"
 readme = "README.md"
 authors = ["Ivan Ogasawara <ivan.ogasawara@gmail.com>"]
-packages = [
-  {include = "datateller", from="src"},
-]
 license = "BSD 3 Clause"
 exclude = [
   ".git/*",
@@ -14,13 +11,7 @@ exclude = [
 ]
 
 [tool.poetry.dependencies]
-python = ">=3.8.1,<4"
-
-[tool.poetry.group.dev.dependencies]
-pytest = ">=7.3.2"
-black = ">=23.3.0,<23.10"
-pre-commit = ">=3.3.2"
-ruff = ">=0.2.0"
+python = "3.11"
 ipython = "<8"
 ipykernel = ">=6.0.0"
 Jinja2 = ">=3.1.2"
@@ -33,21 +24,20 @@ mkdocs-material = ">=9.1.15"
 mkdocstrings = ">=0.21.2"
 mkdocstrings-python = ">=1.1.2"
 makim = ">=1.14.0,<1.15"
+jupyter-dashboards = ">=0.7.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = ">=7.3.2"
+pre-commit = ">=3.3.2"
+ruff = ">=0.2.0"
 # 'PosixPath' object has no attribute 'endswith'
 virtualenv = "<=20.25.1"
+nbmake = ">=1.5.3"
 
 [tool.pytest.ini_options]
 testpaths = [
     "tests",
 ]
-
-[tool.black]
-line-length = 79
-target-version = ["py38"]
-force-exclude = '''(?x)(
-    docs/*
-  | .*\\.egg-info
-)'''  # TOML's single-quoted strings do not require escaping backslashes
 
 [tool.ruff]
 line-length = 79

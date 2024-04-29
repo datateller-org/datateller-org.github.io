@@ -20,7 +20,7 @@ groups:
           find . -name '*.pyo' -exec rm -f {} +
           find . -name '*~' -exec rm -f {} +
 
-  docs:
+  web:
     targets:
       build:
         help: Build documentation
@@ -30,7 +30,7 @@ groups:
       preview:
         help: Preview documentation page locally
         dependencies:
-          - target: docs.build
+          - target: web.build
         run: |
           mkdocs serve --watch docs --config-file mkdocs.yaml
 
@@ -56,10 +56,15 @@ groups:
         run: |
           pytest ${{ args.path }} ${{ args.params }}
 
+      notebooks:
+        help: test jupyter notebooks
+        run: pytest -vv --nbmake docs/tutorials
+
       ci:
         help: run the sames tests executed on CI
         dependencies:
           - target: tests.unit
+          - target: tests.notebooks
           - target: tests.linter
 
   package:
