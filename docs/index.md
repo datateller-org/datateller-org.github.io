@@ -8,14 +8,18 @@ with remarkable accuracy.
 
 ![Data Teller](/images/header.png)
 
-**Vision**: To become the pioneering force in the field of predictive analytics,
+## Vision
+
+To become the pioneering force in the field of predictive analytics,
 revolutionizing how we understand and prepare for future possibilities.
 
-**Mission**: To provide clients with powerful insights derived from
+## Mission
+
+To provide clients with powerful insights derived from
 sophisticated data analysis, enabling informed decision-making and enhancing
 strategic planning.
 
-**What We Offer**:
+## What We Offer
 
 - **Predictive Insights**: Using advanced algorithms, Data Teller delves deep
   into data to uncover what lies ahead, ensuring that you are always ahead of

@@ -8,17 +8,25 @@ site_dir: ./build/
 # Page tree
 nav:
   - index.md
-  - Changelog: changelog.md
+  - Datamancy: datamancy/
   - Contributing: contributing.md
-  - Datamancy: notebooks/
 theme:
   name: material
   features:
     - content.code.annotate
     - content.tabs.link
     - header.autohide
+    - navigation.footer
     - navigation.indexes
-    - navigation.instant
+    # - navigation.instant
+    # - navigation.instant.prefetch
+    # - navigation.instant.progress
+    # - navigation.prune
+    - navigation.sections
+    - navigation.tabs
+    # - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
     - search.highlight
     - search.share
     - search.suggest
@@ -53,7 +61,6 @@ plugins:
         - "*.py"
         - ".ipynb_checkpoints/*"
       include_source: true
-      theme: dark
   - literate-nav
 markdown_extensions:
   - admonition
