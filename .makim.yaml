@@ -59,7 +59,7 @@ groups:
 
       notebooks:
         help: test jupyter notebooks
-        run: pytest -vv --nbmake docs/notebooks
+        run: pytest -vv --nbmake docs/datamancy
 
       ci:
         help: run the sames tests executed on CI
