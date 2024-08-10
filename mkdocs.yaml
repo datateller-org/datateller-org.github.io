@@ -1,117 +1,138 @@
 site_name: Data Teller
-site_url: https://datateller-org.github.io
-repo_url: https://github.com/datateller-org.github.io
-docs_dir: ./docs/
-site_dir: ./build/
-# extra_css:
-#   - stylesheets/extra.css
-# Page tree
-nav:
-  - index.md
-  - Datamancy: datamancy/
-  - Contributing: contributing.md
-theme:
-  name: material
-  features:
-    - content.code.annotate
-    - content.tabs.link
-    - header.autohide
-    - navigation.footer
-    - navigation.indexes
-    # - navigation.instant
-    # - navigation.instant.prefetch
-    # - navigation.instant.progress
-    # - navigation.prune
-    - navigation.sections
-    - navigation.tabs
-    # - navigation.tabs.sticky
-    - navigation.top
-    - navigation.tracking
-    - search.highlight
-    - search.share
-    - search.suggest
-  icon:
-    repo: fontawesome/brands/github
-  # note: the path should be investigate a bit more
-  logo: images/logo.png
-  favicon: images/favicon.png
-  palette:
-    # Palette toggle for light mode
-    - scheme: default
-      primary: white
-      accent: lime
-      toggle:
-        icon: material/weather-night
-        name: Switch to dark mode
 
-    # Palette toggle for dark mode
-    - scheme: slate
-      primary: white
-      accent: lime
-      toggle:
-        icon: material/weather-sunny
-        name: Switch to light mode
-  # custom_dir: docs/overrides
+copyright: "Copyright &copy; 2024, Data Teller Team"
+docs_dir: ./docs/
+repo_url: https://github.com/datateller-org
+site_dir: ./build/
+site_url: https://datateller-org.github.io
+site_description: 'Data Teller - Data Service'
+site_author: 'Ivan Ogasawara'
+
+theme:
+  name: 'material'
+  custom_dir: 'docs/theme'
+  favicon: 'images/favicon.ico'
+  logo: '/assets/img/favicons/logo-small-3.png'
+  icon:
+    repo: simple/github
+    admonition:
+      note: octicons/pencil-16
+      abstract: octicons/checklist-16
+      info: octicons/info-16
+      tip: octicons/squirrel-16
+      success: octicons/check-16
+      question: octicons/question-16
+      warning: octicons/alert-16
+      failure: octicons/x-circle-16
+      danger: octicons/zap-16
+      bug: octicons/bug-16
+      example: octicons/beaker-16
+      quote: octicons/comment-16
+    tag:
+      # mc: material/cube
+      # spigot: fontawesome/solid/faucet-drip
+      # paypal: fontawesome/brands/paypal
+      # java: fontawesome/brands/java
+      # discord: fontawesome/brands/discord
+      # mastodon: fontawesome/brands/mastodon
+      # twitter: fontawesome/brands/twitter
+  palette:
+    scheme: 'slate'
+    primary: 'custom'
+    accent: 'blue'
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.indexes
+    - content.code.annotate
+
+extra_css:
+- assets/css/extra.css
+
+extra_javascript:
+- assets/js/timeago.min.js
+- assets/js/timeago_mkdocs_material.js
+
+watch:
+  - docs
+  - docs/theme
+
+extra:
+  social:
+  tags:
+  manifest: docs/assets/img/site.webmanifest
+
+nav:
+  - Main Page: index.md
+  - Blog:
+    - blog/index.md
+    - Tags: blog/tags.md
+
 plugins:
   - search
-  - macros
-  - mkdocs-jupyter:
-      execute: false
-      ignore:
-        - "*.py"
-        - ".ipynb_checkpoints/*"
-      include_source: true
-  - literate-nav
-markdown_extensions:
-  - admonition
-  - attr_list
-  - codehilite
-  - def_list
-  - footnotes
-  - md_in_html
-  - meta
-  - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
-      options:
-        custom_icons:
-          - docs/static/icons
-  - pymdownx.details
-  - pymdownx.highlight
-  - pymdownx.inlinehilite
-  - pymdownx.magiclink:
-      provider: github
-      repo_url_shortener: true
-  - pymdownx.saneheaders
-  - pymdownx.snippets
-  - pymdownx.superfences
-  - pymdownx.tabbed:
-      alternate_style: true
-  - tables
-  - toc
-extra:
-  project_name: "Data Teller"
-  team:
-    - name: "Active maintainers"
-      members:
-        - xmnlab
-    - name: "Former maintainers"
-      members:
-        - xmnlab
-  social:
-    - icon: fontawesome/brands/twitter
-      link: https://twitter.com/xmnlab
-    - icon: fontawesome/brands/github
-      link: https://github.com/datateller-org.github.io
-  support_levels:
-    supported:
-      icon: :material-check-decagram:{ .verified }
-      description: Tested in CI. If this doesn't work for you, please [file an issue](https://github.com/datateller-org.github.io/issues/new).
-    bug:
-      icon: :material-bug:{ .bug }
-      description: Should work but doesn't because upstream is broken. Supported on a best-effort basis.
-    unsupported:
-      icon: :material-cancel:{ .cancel }
-      description: Unlikely to ever be supported or no upstream support.
+  - blog:
+      blog_dir: docs/blog
+      blog_toc: true
+      authors: true
+      post_date_format: 'dd. MMM yyyy'
+      post_url_date_format: yyyy
+      post_url_format: '{date}/{file}'
+      archive: true
+      archive_url_format: '{date}'
+      pagination_format: "$link_first $link_previous ~2~ $link_next $link_last"
+      draft_if_future_date: true
+  - rss:
+      match_path: docs/blog/posts/*
+      categories:
+        - categories
+        - tags
+      comments_path: '#__comments'
+  - tags:
+      tags_file: blog/tags.md
+  # - git-revision-date-localized:
+  #     type: custom
+  #     timezone: Europe/Zurich
+  #     locale: en
+  #     custom_format: '%d. %B %Y'
+  #     exclude:
+  #       - blog/index.md
+  #       - blog/posts/index.md
+  #       - blog/posts/tags.md
+  - glightbox
 
-copyright: "Copyright &copy; 2022, Data Teller Team"
+markdown_extensions:
+  - markdown.extensions.meta:
+  - markdown.extensions.attr_list:
+  - markdown.extensions.footnotes:
+      PLACE_MARKER: "<!-- Footnotes -->"
+  - markdown.extensions.toc:
+      permalink: true
+  - markdown.extensions.md_in_html:
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+  - pymdownx.magiclink:
+  - pymdownx.smartsymbols:
+  - pymdownx.snippets:
+      base_path: 'theme/snippets'
+  - pymdownx.superfences:
+  - pymdownx.tilde:
+  - pymdownx.blocks.admonition:
+      types:
+        - note
+        - abstract
+        - info
+        - tip
+        - success
+        - question
+        - warning
+        - failure
+        - danger
+        - bug
+        - example
+        - quote
+  - pymdownx.blocks.details:
+  - pymdownx.blocks.tab:
+      alternate_style: true
