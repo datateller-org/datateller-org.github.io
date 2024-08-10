@@ -2,17 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://datateller-org.github.io/</loc>
-         <lastmod>2024-05-01</lastmod>
+         <lastmod>2024-08-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://datateller-org.github.io/contributing/</loc>
-         <lastmod>2024-05-01</lastmod>
+         <loc>https://datateller-org.github.io/blog/</loc>
+         <lastmod>2024-08-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://datateller-org.github.io/datamancy/titanic/</loc>
-         <lastmod>2024-05-01</lastmod>
+         <loc>https://datateller-org.github.io/docs/blog/</loc>
+         <lastmod>2024-08-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://datateller-org.github.io/theme/snippets/back/</loc>
+         <lastmod>2024-08-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://datateller-org.github.io/theme/snippets/footnotes/</loc>
+         <lastmod>2024-08-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://datateller-org.github.io/blog/tags/</loc>
+         <lastmod>2024-08-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
