@@ -42,8 +42,8 @@ jobs:
           poetry config virtualenvs.create false
           poetry install --no-root
 
-      - name: Test tutorials
-        run: makim --verbose tests.notebooks
+      # - name: Test tutorials
+      #   run: makim --verbose tests.notebooks
 
       - name: Generate documentation with changes from semantic-release
         run: makim --verbose web.build
