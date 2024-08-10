@@ -25,6 +25,8 @@ mkdocstrings = ">=0.21.2"
 mkdocstrings-python = ">=1.1.2"
 makim = ">=1.14.0,<1.15"
 jupyter-dashboards = ">=0.7.0"
+mkdocs-rss-plugin = ">=1.15.0"
+mkdocs-glightbox = "^0.4.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = ">=7.3.2"
